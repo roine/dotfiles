@@ -16,3 +16,4 @@
 	alias = config --get-regexp alias
 	find = "!git ls-files | grep -i"
 	grep = grep -Ii
+	nohistory = clone --depth 1
