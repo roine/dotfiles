@@ -17,3 +17,4 @@
 	find = "!git ls-files | grep -i"
 	grep = grep -Ii
 	nohistory = clone --depth 1
+	conflict = git diff --name-only --diff-filter=U
