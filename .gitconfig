@@ -9,8 +9,11 @@
     status          = auto
 
 [alias]
+	co = checkout
+	ci = commit
 	st = status
-	pom = push origin master
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	alias = config --get-regexp alias
@@ -18,3 +21,10 @@
 	grep = grep -Ii
 	nohistory = clone --depth 1
 	conflict = git diff --name-only --diff-filter=U
+[core]
+	trustctime = false
+	excludesfile = ~/.gitignore
+[rebase]
+	autosquash = true # Useful when used with fixup
+[push]
+	default = current # Use current branch's name to push
