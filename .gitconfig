@@ -1,6 +1,7 @@
 [user]
-  name = roine
+	name = Jon de Montalembert
 	email = feunetre@hotmail.com
+	signingkey = 60D5FD48
 
 [color]
     branch          = auto
@@ -21,10 +22,15 @@
 	grep = grep -Ii
 	nohistory = clone --depth 1
 	conflict = git diff --name-only --diff-filter=U
+	cof = !git for-each-ref --format='%(refname:short)' refs/heads | fzf | xargs git checkout
 [core]
 	trustctime = false
 	excludesfile = ~/.gitignore
 [rebase]
 	autosquash = true # Useful when used with fixup
 [push]
-	default = current # Use current branch's name to push
+	default = current
+[branch]
+	autoSetupMerge = always
+[commit]
+	gpgsign = false
